@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+
+int words, age;
+float fee;
+
+//input
+printf("Please put the amount of words: ");
+scanf("%d", &words);
+printf("Please put your age in years: ");
+scanf("%d", &age);
+
+//process on the fee
+if (words > 5){
+    words -= 5;
+    fee = 20;
+    fee +=words * 1.5;
+
+//Note: -20% off of x is equivalent to x * 0.80, same on -10% and 0.90
+if ((words + 5) >=50){
+    fee *= 0.90;
+}
+if (age >=60){
+    fee *= 0.80;
+}
+}
+else {
+    fee =20;
+}
+//output on the fee
+printf("The fee is %.2f\n", fee);
+return 0;
+}
